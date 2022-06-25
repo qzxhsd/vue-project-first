@@ -36,8 +36,6 @@
 </template>
 
 <script>
-import { validate } from 'json-schema'
-
 export default {
   data() {
     return {
@@ -51,7 +49,7 @@ export default {
     login(form) {
       this.$refs[form].validate((valid) => {
         if (valid) {
-          this.$router.push('/')
+          this.$router.push('/home')
         } else {
           console.error(this.form)
         }

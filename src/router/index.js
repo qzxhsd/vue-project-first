@@ -1,36 +1,48 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../components/Home.vue'
-import NotFound from '../components/NotFound.vue'
-import Login from '../components/Login.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: Home
-  },
-  {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: function () {
-      return import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-    }
-  },
-  {
-    path: '*',
-    name: 'notFound',
-    component: NotFound
+    redirect: '/login',
+    hidden: true
   },
   {
     path: '/login',
     name: 'login',
-    component: Login
+    component: () => import('../components/Login.vue'),
+    hidden: true
+  },
+  {
+    path: '*',
+    name: 'notFound',
+    component: () => import('../components/NotFound.vue'),
+    hidden: true
+  },
+  {
+    path: '/home',
+    redirect: '/home/student',
+    name: '学生管理',
+    component: () => import('../components/Home.vue'),
+    children: [
+      {
+        path: '/home/student',
+        name: '学生列表',
+        component: () => import('../components/student/studentList.vue')
+      },
+      {
+        path: '/home/work',
+        name: '作业列表',
+        component: () => import('../components/student/workList.vue')
+      },
+      {
+        path: '/home/info',
+        name: '信息列表',
+        component: () => import('../components/student/infoList.vue')
+      }
+    ]
   }
 ]
 

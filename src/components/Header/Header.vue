@@ -14,7 +14,7 @@ export default {}
 <style lang="less" scoped>
 .header {
   .el-header {
-    background-color: #409eff;
+    background-color: #606266;
     color: white;
     line-height: 60px;
     display: flex;
