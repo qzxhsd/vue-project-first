@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkfront_end"]=self["webpackChunkfront_end"]||[]).push([[469],{3469:function(e,t,n){n.r(t),n.d(t,{default:function(){return a}});var s=function(){var e=this,t=e.$createElement,n=e._self._c||t;return n("div",{staticClass:"studentList"},[e._v("学生列表")])},u=[],r={},c=r,l=n(1001),f=(0,l.Z)(c,s,u,!1,null,"7c476eec",null),a=f.exports}}]);
+//# sourceMappingURL=469.e68ac10d.js.map
